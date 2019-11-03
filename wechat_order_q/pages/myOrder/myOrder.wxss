@@ -1,0 +1,311 @@
+/* 顶部菜单切换 */
+
+.navbar {
+ display: flex;
+ background: #fff;
+}
+
+.none_tab {
+ position: relative;
+ top: 20rpx;
+ color: #999;
+ font-size: 32rpx;
+}
+
+/* 默认选中菜单 */
+
+.navbar .item {
+ position: relative;
+ flex: auto;
+ font-size: 27rpx;
+ width: 100rpx;
+ text-align: center;
+ line-height: 80rpx;
+ color: #333;
+ border-bottom: 6rpx solid #ddd;
+}
+
+/* 选中菜单样式 */
+
+.navbar .item.active {
+ color: #333;
+ border-bottom: 6rpx solid #d66058;
+}
+
+/* 字体 */
+
+.navbar .item.active:after {
+ content: "";
+ display: block;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ height: 4rpx;
+}
+
+/* 全部 */
+
+.cont_count {
+ padding-top: 6rpx;
+ position: relative;
+ width: 100%;
+ text-align: center;
+ /* height: 620rpx; *//* border-bottom: 6rpx solid #ddd; */
+ margin-bottom: 6rpx;
+ background-color: #fff;
+}
+
+/* 编号 */
+
+.seria {
+ position: relative;
+ display: inline-block;
+ width: 90%;
+ height: 70rpx;
+ line-height: 70rpx;
+ /* background-color: yellow; */
+ border-bottom: 1rpx solid #d4d4d4;
+}
+
+/* 订单lab */
+
+.seriac_name {
+ position: absolute;
+ font-size: 28rpx;
+ color: #333;
+ left: 0rpx;
+}
+
+.seriac_name text {
+ margin-left: 15rpx;
+}
+
+/* 订单状态 */
+
+.seriac_start {
+ position: absolute;
+ right: 0rpx;
+ color: gold;
+ font-size: 28rpx;
+}
+
+/* 列表 */
+
+.list {
+ position: relative;
+ width: 90%;
+ display: inline-block;
+ padding-bottom: 10rpx;
+ height: 200rpx;
+}
+
+/* 列表图片 */
+
+.list_img {
+ position: absolute;
+ width: 144rpx;
+ height: 144rpx;
+ left: 0rpx;
+ top: 30rpx;
+}
+
+/* 列表标题 */
+
+.list_name {
+ position: absolute;
+ text-align: left;
+ top: 30rpx;
+ left: 180rpx;
+ color: #333;
+ width: 350rpx;
+ font-size: 30rpx;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 2;
+ overflow: hidden;
+}
+
+/* 列表价格 */
+
+.list_money {
+ position: absolute;
+ font-size: 24rpx;
+ right: 0rpx;
+ bottom: 30rpx;
+}
+
+/* 总和 */
+
+.count_eg {
+ position: relative;
+ width: 100%;
+ height: 90rpx;
+ line-height: 90rpx;
+ border-bottom: 2rpx solid #ebebeb;
+ /* background-color: red; */
+}
+
+/* 总和居中 */
+
+.count_cent {
+ position: relative;
+ width: 90%;
+ display: inline-block;
+ height: 90rpx;
+ line-height: 90rpx;
+}
+
+/* 商品数量 */
+
+.cont_cent_name {
+ position: relative;
+ font-size: 28rpx;
+ float: right;
+}
+
+.cont_ce_mon {
+ font-size: 36rpx;
+ color: red;
+}
+
+/* 总计金额 */
+
+.cont_cen_money {
+ position: relative;
+ font-size: 28rpx;
+ margin-right: 15rpx;
+ float: right;
+}
+
+/* 标签功能 */
+
+.coent_list {
+ position: relative;
+ width: 100%;
+ height: 150rpx;
+ line-height: 150rpx;
+ /* border-bottom: 6rpx solid #ddd; */
+ background-color: #fff;
+}
+
+/* 取消订单 */
+
+.coent_del {
+ position: absolute;
+ top: 30%;
+ right: 270rpx;
+ display: inline-block;
+ width: 180rpx;
+ text-align: center;
+ height: 56rpx;
+ border: 1rpx solid #d3d3d3;
+ font-size: 30rpx;
+ line-height: 56rpx;
+}
+
+.coent_log_base {
+ position: absolute;
+ top: 30%;
+ color: darkgoldenrod;
+ right: 40rpx;
+ display: inline-block;
+ width: 180rpx;
+ height: 56rpx;
+ text-align: center;
+ border: 1rpx solid darkgoldenrod;
+ font-size: 30rpx;
+ line-height: 56rpx;
+}
+
+/* 评论弹窗 */
+
+.toast-box {
+ width: 100%;
+ height: 100%;
+ opacity: 1;
+ position: fixed;
+ top: 0px;
+ left: 0px;
+}
+
+.toastbg {
+ opacity: 0.2;
+ background-color: black;
+ position: absolute;
+ width: 100%;
+ min-height: 100vh;
+}
+
+.showToast {
+ position: absolute;
+ opacity: 1;
+ width: 70%;
+ margin-left: 15%;
+ margin-top: 40%;
+}
+
+.toast-title {
+ padding-left: 5%;
+ background-color: #2196f3;
+ color: white;
+ padding-top: 2vh;
+ padding-bottom: 2vh;
+ border-top-right-radius: 16rpx;
+ border-top-left-radius: 16rpx;
+}
+
+.toast-main {
+ padding-top: 2vh;
+ padding-bottom: 2vh;
+ background-color: white;
+ text-align: center;
+}
+
+.toast-input {
+ margin-left: 5%;
+ margin-right: 5%;
+ border: 1px solid #ddd;
+ padding-left: 2vh;
+ padding-right: 2vh;
+ padding-top: 1vh;
+ padding-bottom: 1vh;
+}
+
+.textarea_comment {
+ height: 80px;
+ width: 100%;
+}
+
+.toast-button {
+ display: flex;
+}
+
+.button1 {
+ width: 50%;
+}
+
+.button2 {
+ width: 50%;
+}
+
+.button1 button {
+ width: 100%;
+ background-color: white;
+ color: red;
+ border-radius: 0px;
+ border-bottom-left-radius: 16rpx;
+}
+
+.button2 button {
+ width: 100%;
+ background-color: white;
+ color: black;
+ border-radius: 0px;
+ border-bottom-right-radius: 16rpx;
+}
+
+.picker {
+ padding-top: 1vh;
+ padding-bottom: 1vh;
+}

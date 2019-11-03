@@ -1,0 +1,47 @@
+/* change.wxss */
+
+page{
+  background: #69e6db;
+}
+
+.container{
+  width: 90%;
+  margin: 4%;
+  background: white
+}
+
+.item_root{
+  background: white;
+  padding: 8px 10px;
+}
+
+.textarea80px{
+  width: 100%;
+  height: 80px;
+  border: 1px solid gainsboro;
+}
+
+.textarea25px {
+ width: 100%;
+ height: 25px;
+ border: 1px solid gainsboro;
+}
+
+.my_item_small {
+ /* 带选择箭头 */
+ width: 90%;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ padding: 8px 10px;
+ background: white;
+ /* border-bottom: 1px solid gainsboro; */
+}
+
+/* 发布按钮 */
+.btn_fabu {
+ width: 80%;
+ height: 40px;
+ margin-top: 30px;
+ align-items: center;
+}

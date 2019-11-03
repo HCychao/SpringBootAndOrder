@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 852013
+    url: jdbc:mysql://localhost/wechat_order
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+#  redis:
+#    host: 192.168.131.134
+#    port: 6379
+
+server:
+  servlet:
+    context-path: /sell
+  port: 8080
+
+#定义网址
+projecturl:
+  sell: localhost:8080
