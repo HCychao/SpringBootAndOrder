@@ -9,10 +9,10 @@ JDK8、MySql、SpringBoot、Spring—data-jpa、Lombok、Freemarker、Bootstrap�
 前端主要用到的技术：
 微信小程序开发
 
-项目效果图：
+由于本人没有商家号，微信支付功能并没有完善。
 
-后端：
+此点餐系统还在不断的完善中...
 
-登录
+此点餐系统的详细讲解在：
 
 
