@@ -1,0 +1,25 @@
+<!--mycomment.wxml-->
+
+<!--导航条-->
+<view class="navbar">
+  <label wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab == index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+    <text>{{item}}</text>
+  </label>
+</view>
+
+<view wx:if="{{list.length > 0}}">
+  <!--外层-->
+  <view class="cont_count" wx:for="{{list}}" wx:key="key">
+    <view class="singleTrace">
+      <view class="name_root">
+        <image src="{{item.avatarUrl}}" class="img" />
+        <text class="name">{{item.commentName}}评论：</text>
+      </view>
+      <view class="content">{{item.commentContent}}</view>
+    </view>
+  </view>
+</view>
+<!--否则-->
+<view wx:else class="cont_count">
+  <label class="none_tab">数据为空哟~~~~</label>
+</view>

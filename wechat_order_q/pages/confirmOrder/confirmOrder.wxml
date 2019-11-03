@@ -1,0 +1,125 @@
+<!--头部  -->
+<view class="page cont_box">
+  <view class="weui-panel__bd posi_fiexd">
+    <navigator url="" class="weui-media-box weui-media-box_appmsg new_padd  bc_green" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:250rpx;height:120rpx">
+        <image class="weui-media-box__thumb bd_radius" src="../../image/logo2.jpg" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title  color_white">四季等你</view>
+        <view class="weui-media-box__desc color_white">点餐小程序</view>
+      </view>
+    </navigator>
+  </view>
+
+  <!--内容  -->
+  <view class="weui-panel bc_white weui-panel_box">
+    <view class="weui-panel__hd weui_titleBox">{{tableNum}}</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg" wx:for="{{cartList}}" wx:key="">
+          <navigator url="" class="weui-cell weui-cell_access weui_orderBox" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="{{item.icon}}" style="width: 26px;height: 26px;margin-right: 15px;" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{item.name}}</view>
+            </view>
+            <view class="weui-cell__ft order_price">x{{item.quantity}}，￥{{item.price}}</view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class="weui-panel__hd order_sum">合计：
+      <span class="order_sumMoney">{{totalPrice}}元，{{totalNum}}份</span>
+    </view>
+  </view>
+  <!--输入用餐人数  -->
+  <view class="fenxi"></view>
+  <input class="guest_numInput bc_white" focus="{{diner_numF}}" placeholder="请输入用餐人数" type="number" wx:if="{{diner_num > 0 }}" value="{{diner_num}}" bindinput="getDinerNum" />
+  <input class="guest_numInput bc_white" focus="{{diner_numF}}" placeholder="请输入用餐人数" type="number" wx:else bindinput="getDinerNum" />
+  <view class="guest_numBox">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="1" bindtap="getDinnerNUM">1</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="2" bindtap="getDinnerNUM">2</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="3" bindtap="getDinnerNUM">3</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="4" bindtap="getDinnerNUM">4</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="5" bindtap="getDinnerNUM">5</view>
+      </view>
+    </view>
+    <view class="weui-flex weui-flex-bottom">
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="6" bindtap="getDinnerNUM">6</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="7" bindtap="getDinnerNUM">7</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="8" bindtap="getDinnerNUM">8</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="9" bindtap="getDinnerNUM">9</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="guest_num_choose" data-num="0" bindtap="getDinnerNUM">输</view>
+      </view>
+    </view>
+  </view>
+
+  <!--备注  -->
+  <input class="beizhu_input bc_white" bindinput="getRemark" placeholder="请输入备注" value="{{remarks}}" />
+  <!--付款方式  -->
+  <radio-group class="radio-group pay_way">
+    <label class="radio pay_wayName">
+      <text class="pay_wayNameL">余额支付</text>
+      <radio value="" checked class="pay_wayNameR" />
+    </label>
+  </radio-group>
+
+  <!--美地餐饮套餐  -->
+  <!-- <view class="canyin_meidi">
+    <view class="taocan_yue">美地餐饮套餐</view>
+    <view class="taocan_yue">账户金额 ￥7.00</view>
+  </view> -->
+  <!--当前余额  -->
+  <!-- <view class="page__bd page__bd_spacing now_yue">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="yue_placeholder yue_placeholderL">当前余额￥7.00</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="yue_placeholder yue_placeholderR">我要充值</view>
+      </view>
+    </view>
+  </view> -->
+
+  <!-- 底部 -->
+  <view class="footer_box">
+    <button class="all_money" type="primary" size="{{primarySize}}" disabled="{{disabled}}" bindtap="choosePayWay"> 总计：{{totalPrice}}元，{{totalNum}}件</button>
+  </view>
+  <!--选择支付方式弹窗  -->
+  <view hidden="{{maskFlag}}" class="modal-mask" bindtap="closePayWay"></view>
+  <view animation="{{animationData}}" class="cart_popup">
+    <view class="shopcart_title">
+      <span class="shopcart_close" bindtap="closePayWay">返回</span>请选择付款方式</view>
+    <scroll-view scroll-y style="height:250px;margin-top:35px">
+      <block wx:for="{{payWayList}}" wx:key="">
+        <view class="cart_cells" data-id="{{item.id}}" bindtap="submitOrder">
+          <view class="cells_name" data-id="{{item.id}}">{{item.package}}</view>
+          <!-- <view class="price-box" data-id="{{item.id}}">余额：{{item.money}}元 </view> -->
+          <view class="price-box" data-id="{{item.id}}">点击支付{{totalPrice}}元 </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</view>
