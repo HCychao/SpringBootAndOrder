@@ -13,6 +13,6 @@ JDK8、MySql、SpringBoot、Spring—data-jpa、Lombok、Freemarker、Bootstrap�
 
 此点餐系统还在不断的完善中...
 
-此点餐系统的详细讲解在：
+此点餐系统的详细讲解在：https://www.cnblogs.com/HHHY/p/11787174.html
 
 
